@@ -11,10 +11,10 @@ import 'package:flutter/material.dart';
 
 
 Future<void> convertVideoToWebp(String inputPath, {int frame = 0, required Function(int) onProgress}) async {
-  // FFmpeg command to extract a frame from a video and save it as a WEBP image
-  // The command `-i` specifies the input file
-  // The command `-vf` applies a filter with `select` to choose a specific frame (`eq(n,0)` selects the first frame)
-  // The command `-vframes` specifies the number of frames to output (1, since we're converting to a single image)
+  // FFmpeg command
+  // `-i` specifies the input file
+  // -vf` applies a filter with `select` to choose a specific frame (`eq(n,0)` selects the first frame)
+  // `-vframes` specifies the number of frames to output (1, since we're converting to a single image)
 
   StatisticsCallback statisticsCallback = (Statistics statistics) {
     // Update progress. This simply updates with frame number
